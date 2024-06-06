@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+    stage('Test SonarQube Connection') {
+      steps {
+        withSonarQubeEnv('sq1') { 
+          // Asegúrate de que las variables de entorno SONAR_HOST_URL y SONAR_AUTH_TOKEN estén disponibles
+          sh 'echo $SONAR_HOST_URL'
+          sh 'echo $SONAR_AUTH_TOKEN'
+          // Aquí puedes agregar comandos para interactuar con SonarQube, como un análisis de código
+        }
+      }
+    }
+  }
+}
