@@ -113,6 +113,7 @@ pipeline {
                              docker exec owasp \
                              zap-api-scan.py \
                              -t $target \
+                             -f openapi \
                              -r report.html \
                              -I
                          """
